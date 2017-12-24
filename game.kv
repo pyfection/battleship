@@ -1,0 +1,30 @@
+#:kivy 1.10.0
+
+<Board>:
+    rows: 11
+    cols: 11
+    orientation: 'vertical'
+    Label:
+        id: message
+        size_hint_y: None
+        height: 25
+    BoxLayout:
+        GridLayout:
+            id: board_own
+            cols: root.cols
+        BoxLayout:
+            id: setup_controls
+            orientation: 'vertical'
+            size_hint_x: None
+            width: 50
+            Button:
+                text: "Finish Setup"
+                on_press: root.finish_setup()
+        GridLayout:
+            id: board_enemy
+            rows: root.rows
+
+<Field>:
+    background_normal: ''
+    background_disabled_down: ''
+    background_disabled_normal: ''
